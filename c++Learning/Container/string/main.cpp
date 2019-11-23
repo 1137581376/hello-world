@@ -13,5 +13,8 @@ int main()
 	std::cout << c + b << std::endl;
 	c += b;
 	std::cout << c << std::endl;
+	for(auto i : c)
+		std::cout << i << "-";
+	std::cout << std::endl;
 	return 0;
 }

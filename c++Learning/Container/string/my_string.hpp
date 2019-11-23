@@ -14,6 +14,13 @@ public:
 		ALL,
 		SET_ZERO
 	};
+	//iterator
+	typedef char value_type;
+	typedef value_type* pointer;
+	typedef value_type* iterator;
+	typedef value_type& reference;
+	typedef size_t size_type;
+	typedef std::ptrdiff_t difference_type;
 	//construct
 	explicit my_string(const char *data = NULL);
 	my_string(const my_string& rhs);
@@ -32,5 +39,10 @@ public:
 	friend std::istream& operator>> (std::istream& in, my_string& rhs);
 	my_string operator+ (const my_string& rhs);
 	my_string& operator+= (const my_string& rhs);
+	my_string operator+ (const char *rhs);
+	my_string& operator += (const char *rhs);
+	//iterator method
+	iterator begin() const;
+	iterator end() const;
 };
 #endif //MY_STRING_HEAD

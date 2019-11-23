@@ -138,3 +138,29 @@ my_string& my_string::operator+= (const my_string& rhs)
 	*this = std::move(*this + rhs);
 	return *this;
 }
+/*	my_string operator+ (const char *rhs);
+	my_string& operator+= (const char *rhs);*/
+my_string my_string::operator+ (const char *rhs)
+{
+	return *this + my_string(rhs);
+}
+
+my_string& my_string::operator+= (const char *rhs)
+{
+	*this = std::move(*this + my_string(rhs));
+	return *this;
+}
+/*
+//iterator method
+iterator begin() const;
+iterator end() const;
+*/
+my_string::iterator my_string::begin() const
+{
+	return data;
+}
+
+my_string::iterator my_string::end() const
+{
+	return data + len;
+}
